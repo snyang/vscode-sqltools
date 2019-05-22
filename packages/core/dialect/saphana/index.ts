@@ -2,10 +2,10 @@
 import {
   ConnectionDialect
 } from '@sqltools/core/interface';
-import * as Utils from '@sqltools/core/utils';
 import queries from './queries';
 import GenericDialect from '@sqltools/core/dialect/generic';
 import { DatabaseInterface } from '@sqltools/core/plugin-api';
+import uuid from '@sqltools/core/utils/uuid';
 
 interface Statement {
   exec(params: any[], handler: (err: any, row: any) => void);
@@ -90,12 +90,12 @@ export default class SAPHana extends GenericDialect<HanaConnection> implements C
   }
 
   public async testConnection?() {
-    return this.open().then(conn => conn.exec('select 1 from dummy;', (err, rows) => rows));
+    return this.open().then(conn => conn.exec('select 1 from dummy;', (_err, rows) => rows));
   }
 
   public query(query: string, args?): Promise<DatabaseInterface.QueryResults[]> {
     return this.open().then(conn => {
-      return new Promise<DatabaseInterface.QueryResults[]>((resolve, reject) => {
+      return new Promise<DatabaseInterface.QueryResults[]>((resolve) => {
         if (args) {
           conn.prepare(query, (err, statement) => {
             if (err) {
@@ -128,13 +128,14 @@ export default class SAPHana extends GenericDialect<HanaConnection> implements C
       }
     }
 
-    let res = {
+    const res: DatabaseInterface.QueryResults = {
+      queryId: uuid(),
       connId: this.getId(),
       results: rows,
       cols: cols,
       query: query,
       messages: []
-    } as DatabaseInterface.QueryResults
+    };
 
     return resolve([res]);
   }
@@ -145,14 +146,15 @@ export default class SAPHana extends GenericDialect<HanaConnection> implements C
       messages.push(err.message);
     }
 
-    return resolve([{
+    return resolve([<DatabaseInterface.QueryResults>{
+      queryId: uuid(),
       connId: this.getId(),
       error: err,
       results: [],
       cols: [],
       query: query,
       messages: messages
-    } as DatabaseInterface.QueryResults]);
+    }]);
   }
 
   public getTables(): Promise<DatabaseInterface.Table[]> {

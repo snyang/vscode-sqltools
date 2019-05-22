@@ -13,6 +13,7 @@
     "mssql": "^5.0.5",
     "mysql": "^2.16.0",
     "pg": "^7.8.1",
+    "uuid": "3.3.2",
     "vscode": "^1.1.30",
     "vscode-languageclient": "5.2.1",
     "vscode-languageserver": "5.2.1"
@@ -26,6 +27,7 @@
     "@types/pg": "^7.4.13",
     "@types/redux": "^3.6.0",
     "@types/sqlite3": "^3.1.5",
+    "@types/uuid": "^3.4.4",
     "@types/webpack-env": "^1.13.8",
     "jest": "^24.5.0",
     "jest-cli": "^24.5.0",

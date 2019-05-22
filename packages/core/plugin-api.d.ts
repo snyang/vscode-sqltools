@@ -171,6 +171,7 @@ export namespace DatabaseInterface {
 
   export type Procedure = Function;
   export interface QueryResults {
+    queryId: string;
     label?: string;
     connId: string;
     error?: boolean;

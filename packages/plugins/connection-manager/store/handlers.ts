@@ -40,7 +40,7 @@ export const onDisconnect = (state: ConnectionManagerState, conn: Connection): C
 
 export const onQuerySuccess = (state: ConnectionManagerState, { conn, results }: { conn: Connection, results: DatabaseInterface.QueryResults[] }): ConnectionManagerState => {
   let { queryResults } = state;
-  queryResults[conn.getId()] = results.reduce((agg, res) => ({ ...agg, [res.query]: res }), {});
+  queryResults[conn.getId()] = results.reduce((agg, res) => ({ ...agg, [res.queryId]: res }), {});
   return {
     ...state,
     queryResults

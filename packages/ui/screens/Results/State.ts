@@ -1,10 +1,10 @@
 import { DatabaseInterface } from '@sqltools/core/plugin-api';
 export default interface QueryResultsState {
   connId: string;
-  activeTab?: string;
+  activeQueryId?: string;
   isLoaded: boolean;
   error?: any;
-  queries: string[];
+  queriesIds: string[];
   resultMap: {
     [query: string]: DatabaseInterface.QueryResults;
   };

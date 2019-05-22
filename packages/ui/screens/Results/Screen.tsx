@@ -8,10 +8,10 @@ import '@sqltools/ui/sass/results.scss';
 import { DatabaseInterface } from '@sqltools/core/plugin-api';
 
 export default class ResultsScreen extends React.Component<{}, QueryResultsState> {
-  state: QueryResultsState = { connId: null, isLoaded: false, resultMap: {}, queries: [], error: null, activeTab: null };
+  state: QueryResultsState = { connId: null, isLoaded: false, resultMap: {}, queriesIds: [], error: null, activeQueryId: null };
 
-  saveState = (data, cb = () => {}) => {
-    this.setState(data, () => {
+  saveState = (data: (Partial<Pick<QueryResultsState, keyof QueryResultsState>> | QueryResultsState | null), cb = () => {}) => {
+    this.setState(data as any, () => {
       cb();
       getVscode().setState(this.state);
     });
@@ -23,9 +23,9 @@ export default class ResultsScreen extends React.Component<{}, QueryResultsState
     });
   }
 
-  toggle(query: QueryResultsState['queries'][number]) {
+  toggle(queryId: QueryResultsState['queriesIds'][number]) {
     this.saveState({
-      activeTab: query,
+      activeQueryId: queryId,
     });
   }
 
@@ -34,25 +34,25 @@ export default class ResultsScreen extends React.Component<{}, QueryResultsState
     switch (action) {
       case 'queryResults':
         const results: DatabaseInterface.QueryResults[] = payload;
-        const queries = [];
+        const queriesIds = [];
         const resultMap = {};
         let connId: string;
         (Array.isArray(results) ? results : [results]).forEach((r) => {
           connId = r.connId;
-          queries.push(r.query);
-          resultMap[r.query] = r;
+          queriesIds.push(r.queryId);
+          resultMap[r.queryId] = r;
         });
         this.saveState({
           connId,
           isLoaded: true,
-          queries,
+          queriesIds,
           resultMap,
           error: null,
-          activeTab: queries[0],
+          activeQueryId: queriesIds[0],
         });
         break;
       case 'reset':
-        this.saveState({ connId: null, isLoaded: false, resultMap: {}, queries: [] });
+        this.saveState({ connId: null, isLoaded: false, resultMap: {}, queriesIds: [] });
         break;
 
       case 'getState':
@@ -74,14 +74,14 @@ export default class ResultsScreen extends React.Component<{}, QueryResultsState
         </div>
       );
     }
-    const tabs = this.state.queries.map((query: string) => (
+    const tabs = this.state.queriesIds.map((queryId: string) => (
       <li
-        title={query}
-        key={query}
-        onClick={() => this.toggle(query)}
-        className={'truncate ' + (this.state.activeTab === query ? 'active' : '')}
+        title={this.state.resultMap[queryId].query}
+        key={queryId}
+        onClick={() => this.toggle(queryId)}
+        className={'truncate ' + (this.state.activeQueryId === queryId ? 'active' : '')}
       >
-        {(this.state.resultMap[query] &&  this.state.resultMap[query].label) || query}
+        {(this.state.resultMap[queryId] && (this.state.resultMap[queryId].label || this.state.resultMap[queryId].query)) || queryId}
       </li>
     ));
 
@@ -89,7 +89,7 @@ export default class ResultsScreen extends React.Component<{}, QueryResultsState
       <div className='query-results-container fullscreen-container'>
         <ul className='tabs'>{tabs}</ul>
         <QueryResult
-          {...this.state.resultMap[this.state.activeTab]}
+          {...this.state.resultMap[this.state.activeQueryId]}
         />
       </div>
     );

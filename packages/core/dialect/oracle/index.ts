@@ -1,12 +1,13 @@
 import {
   ConnectionDialect,
-} from '../../interface';
-import * as Utils from '../../utils';
+} from '@sqltools/core/interface';
+import * as Utils from '@sqltools/core/utils';
 import queries from './queries';
 import OracleDBLib from 'oracledb';
 import GenericDialect from '../generic';
 import { DatabaseInterface } from '@sqltools/core/plugin-api';
 import { trim, pipe, trimCharsEnd } from 'lodash/fp';
+import uuid from '@sqltools/core/utils/uuid';
 
 const OracleDBLibVersion = '3.1.1';
 export default class OracleDB extends GenericDialect<OracleDBLib.IConnection> implements ConnectionDialect {
@@ -104,6 +105,7 @@ export default class OracleDB extends GenericDialect<OracleDBLib.IConnection> im
           messages.push(`${res.rowsAffected} rows were affected.`);
         }
         results.push({
+          queryId: uuid(),
           connId: this.getId(),
           cols: (res.rows && res.rows.length) > 0 ? Object.keys(res.rows[0]) : [],
           messages,
@@ -181,14 +183,14 @@ export default class OracleDB extends GenericDialect<OracleDBLib.IConnection> im
         return queryRes.results
           .reduce((prev, curr) => prev.concat(curr), [])
           .map((obj) => {
-            return {              
+            return {
               name: obj.NAME,
               schema: obj.DBSCHEMA,
               database: obj.DBNAME,
               signature: obj.SIGNATURE,
-              args: obj.ARGS ? obj.ARGS.split(/, */g) : [],                            
-              resultType: obj.RESULTTYPE,   
-              tree: obj.TREE,                         
+              args: obj.ARGS ? obj.ARGS.split(/, */g) : [],
+              resultType: obj.RESULTTYPE,
+              tree: obj.TREE,
             } as DatabaseInterface.Function;
           });
       });

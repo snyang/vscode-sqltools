@@ -4,6 +4,7 @@ import { ConnectionDialect, ConnectionInterface } from '@sqltools/core/interface
 import GenericDialect from '@sqltools/core/dialect/generic';
 import * as Utils from '@sqltools/core/utils';
 import { DatabaseInterface } from '@sqltools/core/plugin-api';
+import uuid from '@sqltools/core/utils/uuid';
 
 const TIMESTAMPTZ_OID = 1184
 const TIMESTAMP_OID = 1114
@@ -72,6 +73,7 @@ export default class PostgreSQL extends GenericDialect<Pool> implements Connecti
             messages.push(`${r.rowCount} rows were affected.`);
           }
           return {
+            queryId: uuid(),
             connId: this.getId(),
             cols: (r.fields || []).map(({ name }) => name),
             messages,

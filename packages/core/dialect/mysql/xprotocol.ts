@@ -7,6 +7,7 @@ import * as Utils from '@sqltools/core/utils';
 import GenericDialect from '@sqltools/core/dialect/generic';
 import Queries from './queries';
 import { DatabaseInterface } from '@sqltools/core/plugin-api';
+import uuid from '@sqltools/core/utils/uuid';
 
 export default class MySQLX extends GenericDialect<any> implements ConnectionDialect {
   queries = Queries;
@@ -87,6 +88,7 @@ export default class MySQLX extends GenericDialect<any> implements ConnectionDia
       messages.push(`${affectedRows} rows were affected.`);
     }
     return {
+      queryId: uuid(),
       connId: this.getId(),
       cols,
       messages,

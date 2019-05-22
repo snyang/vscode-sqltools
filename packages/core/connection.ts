@@ -6,6 +6,7 @@ import {
 } from './interface';
 import SQLTools, { DatabaseInterface } from './plugin-api';
 import { decorateException } from './utils/errors';
+import uuid from './utils/uuid';
 
 export default class Connection {
   private tables: DatabaseInterface.Table[] = [];
@@ -118,6 +119,7 @@ export default class Connection {
           message = JSON.stringify(e);
         }
         return [ {
+          queryId: uuid(),
           connId: this.getId(),
           cols: [],
           error: true,

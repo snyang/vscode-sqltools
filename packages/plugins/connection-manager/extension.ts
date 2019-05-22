@@ -184,6 +184,8 @@ export default class ConnectionManagerPlugin implements SQLTools.ExtensionPlugin
 
     if (!mode) return;
 
+    connId = typeof connId === 'string' ? connId : undefined;
+
     return this.resultsWebview.get(connId || this.explorer.getActive().id).saveResults(mode);
   }
 

@@ -8,6 +8,7 @@ import * as Utils from '@sqltools/core/utils';
 import queries from './queries';
 import GenericDialect from '@sqltools/core/dialect/generic';
 import { DatabaseInterface } from '@sqltools/core/plugin-api';
+import uuid from '@sqltools/core/utils/uuid';
 
 export default class MSSQL extends GenericDialect<MSSQLLib.ConnectionPool> implements ConnectionDialect {
   queries = queries;
@@ -88,6 +89,7 @@ export default class MSSQL extends GenericDialect<MSSQLLib.ConnectionPool> imple
         messages.push(`${rowsAffected[i]} rows were affected.`);
 
       return {
+        queryId: uuid(),
         connId: this.getId(),
         cols: Array.isArray(r) ? Object.keys(r[0] || {}) : [],
         messages,

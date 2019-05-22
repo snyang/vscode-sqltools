@@ -36,6 +36,7 @@ MSSQL driver specific options can be passed using `pgOptions` settings.
   "mssqlOptions": {
     ... // options
   }
+}
 ```
 
 | Option key  | Default Value | Allowed Values |

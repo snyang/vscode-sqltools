@@ -23,7 +23,7 @@ class ResultsWebview extends WebviewProvider<QueryResultsState> {
   }
 
   public async saveResults(filetype: 'csv' | 'json' = 'csv') {
-    const { connId, activeTab } = await this.getState();
+    const { connId, activeQueryId } = await this.getState();
     let filters = undefined;
 
     if (filetype === 'csv') {
@@ -41,7 +41,7 @@ class ResultsWebview extends WebviewProvider<QueryResultsState> {
     });
     if (!file) return;
     const filename = file.fsPath;
-    await this.client.sendRequest(SaveResultsRequest, { connId, query: activeTab, filename, filetype });
+    await this.client.sendRequest(SaveResultsRequest, { connId, query: activeQueryId, filename, filetype });
     return vscode.commands.executeCommand('vscode.open', file);
   }
 

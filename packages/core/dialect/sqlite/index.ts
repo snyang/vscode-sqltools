@@ -3,9 +3,10 @@ import {
 } from '@sqltools/core/interface';
 import * as Utils from '@sqltools/core/utils';
 import SQLiteLib from 'sqlite3';
-import GenericDialect from '../generic';
+import GenericDialect from '@sqltools/core/dialect/generic';
 import queries from './queries';
 import { DatabaseInterface } from '@sqltools/core/plugin-api';
+import uuid from '@sqltools/core/utils/uuid';
 
 const SQLite3Version = '4.0.6';
 
@@ -71,6 +72,7 @@ export default class SQLite extends GenericDialect<SQLiteLib.Database> implement
         messages.push(`${res.length} rows were affected.`);
       }
       results.push({
+        queryId: uuid(),
         connId: this.getId(),
         cols: res && res.length ? Object.keys(res[0]) : [],
         messages,
