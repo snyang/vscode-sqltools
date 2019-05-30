@@ -1,3 +1,17 @@
+---
+title: Codelens
+path: /codelens
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
+
 # Codelens
 
 Since v0.17.15 you can run queries using VSCode Codelens.

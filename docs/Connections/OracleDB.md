@@ -1,3 +1,16 @@
+---
+title: OracleDB
+path: /connections/oracledb
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
 
 # Oracle Start Guide
 
@@ -60,7 +73,7 @@ For example if you have `tnsnames.ora` file with service name defined or any oth
 }
 ```
 
-If you omit `server` and `port` properties, `database` can be used as an alias for `connectString`.  
+If you omit `server` and `port` properties, `database` can be used as an alias for `connectString`.
 
 ### 2.3 Specific Options
 
@@ -71,7 +84,7 @@ Oracle Connection Pool specific configurations can be passed using `oracleOption
   "dialect": "OracleDB",
   "name": "oracledb2",
   "username": "hr",
-  "password": "welcome",  
+  "password": "welcome",
   "connectString": "hostname:port/service_name",
   "oracleOptions": {
     "poolMax": 1,

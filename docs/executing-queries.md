@@ -1,3 +1,17 @@
+---
+title: Executing Queries
+path: /executing-queries
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
+
 # Executing Queries
 
 You have 3 methods to execute queries. Run from selection, run from bookmarks, run from history.

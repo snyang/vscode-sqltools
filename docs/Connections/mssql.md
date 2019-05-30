@@ -1,3 +1,16 @@
+---
+title: SQL Server/Azure Start Guide
+path: /connections/mssql
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
 
 # SQL Server/Azure Start Guide
 

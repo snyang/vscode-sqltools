@@ -1,8 +1,21 @@
+---
+title: Changelog
+path: /changelog
+
+language_tabs:
+  - json
+
+includes:
+  - errors
+
+search: true
+---
+
 # Changelog
 
 ## v0.19
 
-### v0.19.2 - (May 24, 2019)
+### v0.19.2 <cite>May 24, 2019</cite>
 
 * **Fix** 🎉
   * Fixed explorer tree when tree items have dots. Issue [#242](https://github.com/mtxr/vscode-sqltools/issues/242)
@@ -11,7 +24,7 @@
 * **Enhancements**
   * Enhanced speed removing cycle references. thanks to [@ariel-bentu](https://github.com/ariel-bentu). PR [#233](https://github.com/mtxr/vscode-sqltools/pull/233)
 
-### v0.19.1 - (May 20, 2019)
+### v0.19.1 <cite>May 20, 2019</cite>
 
 * **NEW** 🎉
   * Add attach and detach commands to the command palette. Issue [#237](https://github.com/mtxr/vscode-sqltools/issues/237)
@@ -20,7 +33,7 @@
   * Fixed session files when no folder is open. Issue [#236](https://github.com/mtxr/vscode-sqltools/issues/236)
 
 
-### v0.19.0 - (May 20, 2019)
+### v0.19.0 <cite>May 20, 2019</cite>
 
 * **NEW** 🎉
   * Multiple connections with session files. PR [#188](https://github.com/mtxr/vscode-sqltools/pull/188)
@@ -42,17 +55,17 @@
 
 ## v0.18
 
-### v0.18.2 - (May 9, 2019)
+### v0.18.2 <cite>May 9, 2019</cite>
 
 * **Fix** 🎉
   * Add stored procedure listing on explorer for Oracle. Issue [#208](https://github.com/mtxr/vscode-sqltools/issues/208)
 
-### v0.18.1 - (May 8, 2019)
+### v0.18.1 <cite>May 8, 2019</cite>
 
 * **Fix** 🎉
   * Add escape chars for table names, schemas and catalogs. Issue [#216](https://github.com/mtxr/vscode-sqltools/issues/216)
 
-### v0.18.0 - (May 7, 2019)
+### v0.18.0 <cite>May 7, 2019</cite>
 
 * **NEW** 🎉
   * Add options to edit connections from explorer and command palette. Issue [#185](https://github.com/mtxr/vscode-sqltools/issues/185) and PR [#209](https://github.com/mtxr/vscode-sqltools/pull/209)
@@ -68,14 +81,14 @@
 
 ## v0.17
 
-### v0.17.18 - (May 2, 2019)
+### v0.17.18 <cite>May 2, 2019</cite>
 
 * **Enhancements**
   * Error messages now has an option for quick opening docs.
   * Font fallbacks. Issue [#200](https://github.com/mtxr/vscode-sqltools/issues/200)
   * Changed tree separators for explorer.
 
-### v0.17.17 - (april 29, 2019)
+### v0.17.17 <cite>april 29, 2019</cite>
 
 * **NEW** 🎉
   * Add support for connections string for PostgreSQL and Oracle. PR [#192](https://github.com/mtxr/vscode-sqltools/pull/192)
@@ -91,7 +104,7 @@
 
 > this package contains a packing error. Please update to most recent version.
 
-### v0.17.15 - (April 14, 2019)
+### v0.17.15 <cite>April 14, 2019</cite>
 
 * **Fix** 🎉
   * Minor fix on codelens.
@@ -338,26 +351,11 @@
 
 * Minor fix. Show records infinity loop.
 
-### v0.16.0 and v0.16.1
+### Older Versions
 
-See [v0.16.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.16.x.md)
-
-## v0.15
-
-See [v0.15.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.15.x.md)
-
-## v0.14
-
-Skipped.
-
-## v0.13
-
-See [v0.13.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.13.x.md)
-
-## v0.12
-
-See [v0.12.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.12.x.md)
-
-## v0.11
-
-See [v0.11.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.11.x.md)
+* [v0.16.1 and v0.16.0](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.16.x.md)
+* [v0.15.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.15.x.md)
+* v0.14.x was skipped.
+* [v0.13.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.13.x.md)
+* [v0.12.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.12.x.md)
+* [v0.11.x](https://github.com/mtxr/vscode-sqltools/blob/master/static/release-notes/v0.11.x.md)

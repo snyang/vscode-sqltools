@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Getting Started",
+    "link": "/"
+  },
+  {
+    "label": "Connections",
+    "link": "/connections",
+    "items": [
+      {
+        "label": "MSSQL/SQL Server/Azure",
+        "link": "/connections/mssql"
+      },
+      {
+        "label": "MySQL",
+        "link": "/connections/mysql"
+      },
+      {
+        "label": "Oracle Database",
+        "link": "/connections/oracledb"
+      },
+      {
+        "label": "PostgreSQL",
+        "link": "/connections/postgresql"
+      },
+      {
+        "label": "SQLite",
+        "link": "/connections/sqlite"
+      },
+      {
+        "label": "SAP HANA",
+        "link": "/connections/saphana"
+      }
+    ]
+  },
+  {
+    "label": "Sessions and Multiple Connections",
+    "link": "/session-multiple-connections"
+  },
+  {
+    "label": "Executing Queries",
+    "link": "/executing-queries"
+  },
+  {
+    "label": "Codelens",
+    "link": "/codelens"
+  },
+  {
+    "label": "Contributing",
+    "link": "/contributing",
+    "items": [
+      {
+        "label": "Building",
+        "link": "/contributing/building"
+      },
+      {
+        "label": "How to add a dialect",
+        "link": "https://github.com/mtxr/vscode-sqltools/pull/219"
+      }
+    ]
+  },
+  {
+    "label": "Changelog",
+    "link": "/changelog"
+  }
+]

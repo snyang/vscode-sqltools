@@ -1,4 +1,17 @@
-## Connections
+---
+title: Connections
+path: /connections
+
+language_tabs:
+  - json
+
+includes:
+  - errors
+
+search: true
+---
+
+# Connections
 
 * [MSSQL/SQL Server/Azure](Connections/mssql.md)
 * [MySQL](Connections/mysql.md)

@@ -1,4 +1,18 @@
-## Sessions and Multiple Connections
+---
+title: Sessions and Multiple Connections
+path: /session-multiple-connections
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
+
+# Sessions and Multiple Connections
 
 Sometimes is very useful to have SQL files attached to different connections.
 

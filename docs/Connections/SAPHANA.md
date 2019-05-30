@@ -1,3 +1,17 @@
+---
+title: SAP HANA
+path: /connections/saphana
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
+
 # SAP HANA Start Guide
 
 ## 1. Prerequisites
@@ -14,7 +28,7 @@ For full reference, see [SAP Documentation](https://help.sap.com/viewer/0eec0d68
 {
   "name": "<your prefered name>",
   "dialect": "SAPHana",
-  "database": "<the schema you want to connect to>", 
+  "database": "<the schema you want to connect to>",
   "username": "<user-name",
   "password": "<pwd>",
   "connectionTimeout": 15 //in seconds,0 for disabling

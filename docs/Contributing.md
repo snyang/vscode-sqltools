@@ -1,3 +1,18 @@
+---
+title: Contributing
+path: /contributing
+
+language_tabs:
+  - json
+
+includes:
+  - errors
+
+search: true
+---
+
+# Contributing
+
 ## How to contribute to SQLTools
 
 #### **Did you find a bug?**

@@ -1,3 +1,16 @@
+---
+title: PostgreSQL
+path: /connections/postgresql
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
 
 # PostgreSQL Start Guide
 
@@ -46,7 +59,7 @@ PostgreSQL driver specific options can be passed using `pgOptions` settings.
 
 #### Example: Azure Postgres
 
-This example enables `SSL` for connecting to an Azure Postgres instance. 
+This example enables `SSL` for connecting to an Azure Postgres instance.
 
 ```
 {

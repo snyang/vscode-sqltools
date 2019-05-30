@@ -1,5 +1,18 @@
+---
+title: Home
+path: /
+
+language_tabs:
+  - json
+
+includes:
+  - errors
+
+search: true
+---
+
 <p align="center">
-<img src="https://raw.githubusercontent.com/mtxr/vscode-sqltools/master/static/banner.png" />
+<img src="https://raw.githubusercontent.com/mtxr/vscode-sqltools/master/static/header-hero.png" />
 </p>
 
 <hr />
@@ -16,15 +29,15 @@ Database management done right. Connection explorer, query runner, intellisense,
 ## Features
 
 * SQL Format (Beautifier)
-  * __Win/Linux__: <kbd>ctrl+e</kbd> <kbd>ctrl+b</kbd>
-  * __OSX__: <kbd>cmd+e</kbd> <kbd>cmd+b</kbd>
+  * __Win/Linux__: <kbd>ctrl</kbd>+<kbd>e</kbd> <kbd>ctrl</kbd>+<kbd>b</kbd>
+  * __OSX__: <kbd>cmd</kbd>+<kbd>e</kbd> <kbd>cmd</kbd>+<kbd>b</kbd>
   * or using the standard VSCode Format Document/selection
 * Bookmark query
-  * __Win/Linux__: <kbd>ctrl+e</kbd> <kbd>ctrl+q</kbd>
-  * __OSX__: <kbd>cmd+e</kbd> <kbd>q</kbd>
+  * __Win/Linux__: <kbd>ctrl</kbd>+<kbd>e</kbd> <kbd>ctrl</kbd>+<kbd>q</kbd>
+  * __OSX__: <kbd>cmd</kbd>+<kbd>e</kbd> <kbd>q</kbd>
 * Delete Bookmarked query
-  * __Win/Linux__: <kbd>ctrl+e</kbd> <kbd>ctrl+r</kbd>
-  * __OSX__: <kbd>cmd+e</kbd> <kbd>cmd+r</kbd>
+  * __Win/Linux__: <kbd>ctrl</kbd>+<kbd>e</kbd> <kbd>ctrl</kbd>+<kbd>r</kbd>
+  * __OSX__: <kbd>cmd</kbd>+<kbd>e</kbd> <kbd>cmd+r</kbd>
 * Edit Bookmarked query
 * Auto complete for Table names and columns
 

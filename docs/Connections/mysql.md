@@ -1,3 +1,16 @@
+---
+title: MySQL
+path: /connections/mysql
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
 
 # MySQL Start Guide
 

@@ -1,3 +1,17 @@
+---
+title: SQLite
+path: /connections/sqlite
+
+language_tabs:
+  - json
+  - sql
+
+includes:
+  - errors
+
+search: true
+---
+
 # SQLite Start Guide
 
 ## 1. Prerequisites
