@@ -51,11 +51,9 @@ PostgreSQL driver specific options can be passed using `pgOptions` settings.
   }
 }
 ```
+You can use any options defined in https://node-postgres.com/features/connecting#programmatic in `pgOptions`.
 
-| Option key  | Default Value | Allowed Values |
-| ------------- | ------------- | ------------- |
-| ssl  | `null`  | See https://node-postgres.com/features/ssl |
-
+They will be passed to the pool constructor directly. See https://github.com/mtxr/vscode-sqltools/blob/master/packages/core/dialect/pgsql/index.ts .
 
 #### Example: Azure Postgres
 

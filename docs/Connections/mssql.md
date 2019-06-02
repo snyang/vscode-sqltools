@@ -33,7 +33,7 @@ Connection example:
 
 ### 1.1 Specific Options
 
-MSSQL driver specific options can be passed using `pgOptions` settings.
+MSSQL driver specific options can be passed using `mssqlOptions` settings.
 
 ```json
 {
@@ -54,6 +54,8 @@ MSSQL driver specific options can be passed using `pgOptions` settings.
 | Option key  | Default Value | Allowed Values |
 | ------------- | ------------- | ------------- |
 | encrypt  | `true`  | See https://github.com/tediousjs/node-mssql/tree/v4.3.1#tedious |
+
+You can use any setting defined in https://www.npmjs.com/package/mssql#configuration-1 also extra options defined in Tedious specific options https://www.npmjs.com/package/mssql#tedious
 
 ## Breaking changes
 

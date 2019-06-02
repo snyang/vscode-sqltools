@@ -24,7 +24,7 @@ search: true
 > - macOS 64-bit (Intel x64)
 > - Linux 64-bit (x86-64) (built on Oracle Linux 6)
 
-More information you cand find in [node-oracledb](https://github.com/oracle/node-oracledb) repo: https://github.com/oracle/node-oracledb.
+More information you can find in [node-oracledb](https://github.com/oracle/node-oracledb) repository: https://github.com/oracle/node-oracledb.
 
 ## 2. Connections
 
@@ -69,7 +69,7 @@ For example if you have `tnsnames.ora` file with service name defined or any oth
   "password": "welcome",
   "askForPassword": false,
   "connectionTimeout": 15,
-  "connectString": "oraclpdb"
+  "connectString": "oracledb"
 }
 ```
 
@@ -94,7 +94,7 @@ Oracle Connection Pool specific configurations can be passed using `oracleOption
 }
 ```
 
-See https://github.com/oracle/node-oracledb/blob/master/doc/api.md#createpoolpoolattrs for additonal information.
+See https://github.com/oracle/node-oracledb/blob/master/doc/api.md#createpoolpoolattrs for additional information.
 
 ## 3. Autocompletion
 
@@ -106,4 +106,4 @@ To enable autocompletion in PL/SQL files add:
 ```
 to `settings.json`.
 
-NOTE: You must have installed support for `plsql` langugage files.
+NOTE: You must have installed support for `plsql` language files.
