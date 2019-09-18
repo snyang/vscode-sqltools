@@ -49,7 +49,7 @@
         "sqltools",
         "sap",
         "saphana",
-        "example-diaect"
+        "example-dialect"
     ],
     "galleryBanner": {
         "theme": "dark",

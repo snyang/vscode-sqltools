@@ -7,7 +7,7 @@ import redshiftIcon from './../icons/redshift.png';
 import sapHanaIcon from './../icons/sap_hana.png';
 import sqliteIcon from './../icons/sqlite.png';
 import cassandraIcon from './../icons/cassandra.png';
-import exampleDialectIcon from './../icons/mysql.png';
+import exampleDialectIcon from './../icons/example_dialect.png';
 
 const requirements = [
   'Node 6 or newer. 7 or newer is preferred.',
